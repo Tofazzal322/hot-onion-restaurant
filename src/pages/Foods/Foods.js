@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { Row } from "react-bootstrap";
+import { Row, Spinner } from "react-bootstrap";
 import useData from "../../hooks/useData";
 import FoodItem from "./FoodItem";
-import Skeleton from "./Skeleton";
-import './Foods.css'
+// import Skeleton from "./Skeleton";
+import "./Foods.css";
 
 const Foods = () => {
-  const [menuTab, setMeneTab] = useState("breakfast");
+  const [menuTab, setMeneTab] = useState("allFoods");
   const [loading, setLoading] = useState(false);
   const [foods] = useData();
   console.log(foods);
+
   useEffect(() => {
     setLoading(true);
     setTimeout(() => {
@@ -23,6 +24,18 @@ const Foods = () => {
   return (
     <section className="container">
       <div className="d-flex p-5 menus-tab container">
+        <div className="me-4">
+          <p
+            className={
+              menuTab === "allFoods"
+                ? "active-menu-tab  bg-primary"
+                : "menu-tab poppins"
+            }
+            onClick={() => handleMenuTabs("allFoods")}
+          >
+            All foods
+          </p>
+        </div>
         <div className="me-4">
           <p
             className={
@@ -63,13 +76,9 @@ const Foods = () => {
       <Row>
         {foods
           .filter((food) => menuTab === food.catagories)
-          .map((food) =>
-            loading ? (
-              <Skeleton key={food.id} />
-            ) : (
-              <FoodItem key={food.id} {...food} />
-            )
-          )}
+          .map((food) => (
+            <FoodItem key={food.id} {...food} />
+          ))}
       </Row>
     </section>
   );

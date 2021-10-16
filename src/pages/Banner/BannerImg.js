@@ -9,7 +9,6 @@ import {
 import bannerImg from "../../data/bannerbackground.png";
 import Header from "../Header/Header";
 import Menu from "../Menu/Menu";
-import TabsNav from "../TabsNav/TabsNav";
 import "./Banner.css";
 
 const BannerImg = () => {
