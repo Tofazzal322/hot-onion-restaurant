@@ -1,0 +1,12 @@
+.menus-tab{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.active-menu-tab{
+    padding: 5px 10px;
+    border-radius: 5px;
+    color:rgb(255, 255, 255);
+    font-weight: 700;
+}

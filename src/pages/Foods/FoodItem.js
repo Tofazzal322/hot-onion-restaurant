@@ -39,15 +39,15 @@ const FoodItem = ({ img, title, description, price , categories}) => {
                     View Details
                   </Button>
                   <Collapse in={open}>
-                    <div id="example-collapse-text">
+                    <div id="example-collapse-text p-2">
                       {description}
                     </div>
                   </Collapse>
-                  {/* <Card.Footer>
+                  <Card.Footer>
                     <small className="text-muted">
                       Last updated 3 mins ago
                     </small>
-                  </Card.Footer> */}
+                  </Card.Footer>
                 </Card>
             </Col>
     )

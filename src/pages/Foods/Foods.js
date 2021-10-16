@@ -3,9 +3,10 @@ import { Row } from "react-bootstrap";
 import useData from "../../hooks/useData";
 import FoodItem from "./FoodItem";
 import Skeleton from "./Skeleton";
+import './Foods.css'
 
 const Foods = () => {
-  const [menuTab, setMeneTab] = useState("Breakfast");
+  const [menuTab, setMeneTab] = useState("breakfast");
   const [loading, setLoading] = useState(false);
   const [foods] = useData();
   console.log(foods);
@@ -21,7 +22,7 @@ const Foods = () => {
   };
   return (
     <section className="container">
-      <div className="d-flex p-5 container">
+      <div className="d-flex p-5 menus-tab container">
         <div className="me-4">
           <p
             className={
@@ -38,7 +39,7 @@ const Foods = () => {
           <p
             className={
               menuTab === "lunch"
-                ? "active-menu-tab bg-primary"
+                ? "active-menu-tab bg-danger"
                 : "menu-tab poppins"
             }
             onClick={() => handleMenuTabs("lunch")}
@@ -46,11 +47,11 @@ const Foods = () => {
             Lunch
           </p>
         </div>
-        <div >
+        <div>
           <p
             className={
               menuTab === "dinner"
-                ? "active-menu-tab bg-primary"
+                ? "active-menu-tab bg-info"
                 : "menu-tab poppins"
             }
             onClick={() => handleMenuTabs("dinner")}
@@ -59,7 +60,7 @@ const Foods = () => {
           </p>
         </div>
       </div>
-      <Row >
+      <Row>
         {foods
           .filter((food) => menuTab === food.catagories)
           .map((food) =>
