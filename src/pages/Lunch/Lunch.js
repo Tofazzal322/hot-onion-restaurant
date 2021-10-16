@@ -3,18 +3,14 @@ import { Card, CardGroup, Col, Row } from "react-bootstrap";
 import lunch1 from "../../data/lunch/lunch1.png";
 import lunch2 from "../../data/lunch/lunch2.png";
 import lunch3 from "../../data/lunch/lunch3.png";
+import useData from "../../hooks/useData";
 import BannerImg from "../Banner/BannerImg";
 import Footer from "../Footer/Footer";
 
 const Lunch = () => {
-  const [foods, setFoods] = useState([]);
+  const [foods]=useData()
 console.log(foods);
-    useEffect(() => {
-        // fetch('https://raw.githubusercontent.com/manik-roy/hot-onion-restaurant/master/src/fakeData/foodData.js')
-        fetch('./foods.json')
-            .then(res => res.json())
-        .then(data=>setFoods(data))
-    }, [])
+    
   return (
     <div className="">
       <BannerImg/>

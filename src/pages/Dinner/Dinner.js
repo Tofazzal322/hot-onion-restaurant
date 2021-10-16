@@ -1,15 +1,17 @@
 import Button from "@restart/ui/esm/Button";
 import React, { useEffect, useState } from "react";
-import "./Breakfast.css";
 import { Card, CardGroup, Col, Collapse, Row } from "react-bootstrap";
+import useData from "../../hooks/useData";
 import BannerImg from "../Banner/BannerImg";
 import Footer from "../Footer/Footer";
-import useData from "../../hooks/useData";
 
-const Breakfast = () => {
-  const [ foods ] = useData();
-  // console.log(foods);
+const Dinner = () => {
+  const [foods] = useData();
+
+  // const [foods, setFoods] = useState([]);
   const [open, setOpen] = useState(false);
+  //   console.log(foods);
+
   return (
     <div>
       <BannerImg />
@@ -17,7 +19,7 @@ const Breakfast = () => {
         <Row className="container ">
           <h2 className="text-center">Breakfast menu</h2>
           <CardGroup className="mt-3">
-            {foods?.slice(11, 18)?.map((food) => (
+            {foods.slice(11, 18)?.map((food) => (
               <Col xs={12} md={3} lg={2} className=" g-4 ">
                 <Card className="gh-2">
                   <Card.Img
@@ -28,14 +30,17 @@ const Breakfast = () => {
                   <Card.Body>
                     <Card.Title>{food.title}</Card.Title>
                     <Card.Title> Price: {food.price}</Card.Title>
-                    <Card.Text>{food.description.slice(0, 50)}  <Button
-                    className="btn btn-warning mb-3"
-                    onClick={() => setOpen(!open)}
-                    aria-controls="example-collapse-text"
-                    aria-expanded={open}
-                  >
-                    More
-                  </Button></Card.Text>
+                    <Card.Text>
+                      {food.description.slice(0, 50)}{" "}
+                      <Button
+                        className="btn btn-warning mb-3"
+                        onClick={() => setOpen(!open)}
+                        aria-controls="example-collapse-text"
+                        aria-expanded={open}
+                      >
+                        More
+                      </Button>
+                    </Card.Text>
                   </Card.Body>
                   {/* <Button
                     className="btn btn-warning mb-3"
@@ -46,9 +51,7 @@ const Breakfast = () => {
                     View Details
                   </Button> */}
                   <Collapse in={open}>
-                    <div id="example-collapse-text">
-                      {food.description}
-                    </div>
+                    <div id="example-collapse-text">{food.description}</div>
                   </Collapse>
                   {/* <Card.Footer>
                     <small className="text-muted">
@@ -66,4 +69,4 @@ const Breakfast = () => {
   );
 };
 
-export default Breakfast;
+export default Dinner;

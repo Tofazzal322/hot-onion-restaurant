@@ -12,11 +12,12 @@ import TabsNav from "./pages/TabsNav/TabsNav";
 
 function App() {
   return (
-    <div className="App">
-      {/* <Home></Home> */}
-      <AuthProvider>
       <BrowserRouter>
-        <Switch>
+        <AuthProvider>
+          <Switch>
+            <Route path="/">
+            <Home />
+          </Route>
           <Route exact path="/tabsNav">
             <TabsNav/>
           </Route>
@@ -35,14 +36,9 @@ function App() {
           <Route exact path="/signIn">
             <SignIn></SignIn>
           </Route>
-          
-          <Route path="/">
-            <Home />
-          </Route>
         </Switch>
-      </BrowserRouter>
-      </AuthProvider>
-    </div>
+        </AuthProvider>
+      </BrowserRouter>    
   );
 }
 

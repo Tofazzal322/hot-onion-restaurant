@@ -29,7 +29,7 @@ const BannerImg = () => {
             <FormControl
               
               size="sm"
-              placeholder="Recipient's username"
+              placeholder="Search Food"
               aria-label="Recipient's username"
               aria-describedby="basic-addon2"
             />
@@ -39,7 +39,7 @@ const BannerImg = () => {
           </InputGroup>
         </div>
       </div>
-      <TabsNav/>
+      {/* <TabsNav/> */}
     </div>
   );
 };

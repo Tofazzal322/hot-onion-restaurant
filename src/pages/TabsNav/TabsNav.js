@@ -1,8 +1,6 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import BannerImg from '../Banner/BannerImg';
-import Footer from '../Footer/Footer';
 import './TabsNav.css'
 
 const TabsNav = () => {
@@ -25,10 +23,6 @@ const TabsNav = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      {/* <Breakfast /> */}
-      {/* <Lunch /> */}
-      {/* <Dinner /> */}
-      {/* <Footer />  */}
         </div>
     );
 };
