@@ -1,0 +1,18 @@
+.button{
+    text-decoration: none;
+    background-color: #f92a51;
+    color: rgb(255, 255, 255);
+    padding: 3px 10px 6px;
+    border-radius: 100px;
+    font-weight: 600;
+
+}
+
+.user-sign{
+    /* margin-top: 30px !important; */
+    margin-bottom: 0px ;
+}
+
+/* .navbar-body{
+    margin-bottom: 0 !important;
+} */

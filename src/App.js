@@ -1,23 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Switch } from "react-router";
+import { BrowserRouter } from "react-router-dom";
+import "./App.css";
+import AuthProvider from "./Context/AuthProvider";
+import Breakfast from "./pages/Breakfast/Breakfast";
+import Dinner from "./pages/Dinner/Dinner";
+import Home from "./pages/Home/Home";
+import Lunch from "./pages/Lunch/Lunch";
+import SignIn from "./pages/SignIn/SignIn";
+import SignUp from "./pages/SignUp/SignUp";
+import TabsNav from "./pages/TabsNav/TabsNav";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <Home></Home> */}
+      <AuthProvider>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/tabsNav">
+            <TabsNav/>
+          </Route>
+          <Route exact path="/breakfast">
+            <Breakfast />
+          </Route>
+          <Route exact path="/lunch">
+            <Lunch></Lunch>
+          </Route>
+          <Route exact path="/dinner">
+            <Dinner></Dinner>
+          </Route>
+          <Route exact path="/signUp">
+            <SignUp></SignUp>
+          </Route>
+          <Route exact path="/signIn">
+            <SignIn></SignIn>
+          </Route>
+          
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </BrowserRouter>
+      </AuthProvider>
     </div>
   );
 }
